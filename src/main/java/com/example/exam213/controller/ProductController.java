@@ -97,7 +97,7 @@ public class ProductController {
     }
 
     @GetMapping("/findAllByCategory")
-    public ResponseEntity<List<Product>> findAllByCategory(@RequestParam Category category) {
+    public ResponseEntity<List<Product>> findAllByCategory(@RequestParam String category) {
         List<Product> products = productService.findAllByCategory(category);
         if (products.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
