@@ -23,5 +23,5 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query(value = "select * from products order by price desc limit 3 ", nativeQuery = true)
     List<Product> findTop3HighestPrice();
 
-    List<Product> findAllByCategory_Name(String category);
+    List<Product> findAllByCategoryId(Long id);
 }
